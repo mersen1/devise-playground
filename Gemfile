@@ -56,3 +56,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.9"
+
+gem "redis-rails", "~> 5.0"
+
+gem "redis", "~> 5.0"
