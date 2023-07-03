@@ -8,7 +8,7 @@ module Devise
           redis_conn = Redis.new
           attributes = redis_conn.mapped_hmget(key, self.attribute_names)
 
-          return if attributes.blank?
+          return unless redis_conn.exists?(key)
 
           self.new(attributes)
         end
