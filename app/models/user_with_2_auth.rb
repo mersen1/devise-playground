@@ -11,7 +11,7 @@ class UserWith2Auth
 
   devise :redis_authenticatable
 
-  attribute :id, :integer
+  attribute :key, :string
   attribute :phone_number, :string
   attribute :attempts, :integer
 end

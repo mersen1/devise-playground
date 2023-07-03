@@ -4,12 +4,17 @@ module Devise
       extend ActiveSupport::Concern
 
       module ClassMethods
-        def serialize_from_session(_id)
-          self.new(id: -999, phone_number: '+375...', attempts: 0)
+        def serialize_from_session(key)
+          redis_conn = Redis.new
+          attributes = redis_conn.hgetall(key)
+
+          return if attributes.blank?
+
+          self.new(attributes)
         end
 
         def serialize_into_session(record)
-          [record.id]
+          [record.key]
         end
       end
     end
