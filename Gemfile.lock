@@ -272,7 +272,6 @@ DEPENDENCIES
   rails (~> 7.0.6)
   redis (~> 5.0)
   redis-rails (~> 5.0)
-  redis-store (~> 1.9)
   sass-rails (>= 6)
   selenium-webdriver
   spring
