@@ -13,5 +13,4 @@ class UserWith2Auth
 
   attribute :key, :string
   attribute :phone_number, :string
-  attribute :attempts, :integer
 end
