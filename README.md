@@ -7,3 +7,4 @@
 
 Links:
 * [Devise resourse as a PORO](https://4trabes.com/2012/10/31/remote-authentication-with-devise/)
+* [Allow users to sign in using their username or email address](https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address)
