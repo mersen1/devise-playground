@@ -1,7 +1,21 @@
 <h1>Welcome to the Home Page!</h1>
 <p>This is a simple home page created in Rails 7.</p>
 
+<h2>UserWith2Auth</h2>
 <% if user_with_2_auth_signed_in? %>
   <p>Signed in as <%= current_user_with_2_auth.class.name %>, <%= current_user_with_2_auth.attributes %></p>
-  <p><%= session.to_h %></p>
 <% end %>
+
+<hr/>
+
+<h2>User</h2>
+<% if user_signed_in? %>
+  <p>Signed in as <%= current_user.class.name %>, <%= current_user.attributes %></p>
+  <%= button_to('Sign Out', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to 'Sign In', new_user_session_path %>
+<% end %>
+
+<hr/>
+
+<p><%= session.to_h %></p>

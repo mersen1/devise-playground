@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get 'home/index'
   devise_for :user_with_2_auths
+  devise_for :users
 end
