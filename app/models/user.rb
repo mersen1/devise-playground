@@ -4,11 +4,7 @@ class User < ApplicationRecord
   Phonelib.default_country = "US"
 
   validates :email, presence: true
-  validates :auth_phone_number, phone: {
-    possible: true,
-    allow_blank: false,
-    types: [:mobile]
-  }
+  validates :auth_phone_number, allow_blank: false, phone: true
 
   class << self
     def find_for_database_authentication(warden_conditions)
