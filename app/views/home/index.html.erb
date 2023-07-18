@@ -4,6 +4,10 @@
 <h2>UserWith2Auth</h2>
 <% if user_with_2_auth_signed_in? %>
   <p>Signed in as <%= current_user_with_2_auth.class.name %>, <%= current_user_with_2_auth.attributes %></p>
+  <p>
+    User from <b>request.env["warden"].user(scope: :user_with_2_auth)</b>:
+    <%= request.env["warden"].user(scope: :user_with_2_auth).attributes %>
+  </p>
 <% end %>
 
 <hr/>
@@ -11,6 +15,10 @@
 <h2>User</h2>
 <% if user_signed_in? %>
   <p>Signed in as <%= current_user.class.name %>, <%= current_user.attributes %></p>
+  <p>
+    User from <b>request.env["warden"].user(scope: :user)</b>:
+    <%= request.env["warden"].user(scope: :user).attributes %>
+  </p>
   <%= button_to('Sign Out', destroy_user_session_path, method: :delete) %>
 <% else %>
   <%= link_to 'Sign In', new_user_session_path %>
